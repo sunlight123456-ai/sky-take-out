@@ -37,13 +37,13 @@ public class GlobalExceptionHandler {
     public Result exceptionHandler(SQLIntegrityConstraintViolationException ex){
         String message = ex.getMessage();
         if(message.contains("Duplicate entry")){
-            String [] split =message.split(" ");
-            String name = split[2];
-            String msg = name + MessageConstant.ALREADY_EXIST;
+            String[] split = message.split(" ");
+            String msg = split[2] +MessageConstant.ALREADY_EXIST;
             return Result.error(msg);
         }else {
             return Result.error(MessageConstant.UNKNOWN_ERROR);
         }
     }
+
 
 }
