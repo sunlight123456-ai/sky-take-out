@@ -1,5 +1,6 @@
 package com.sky.service.impl;
 
+import com.sky.dto.SetmealDTO;
 import com.sky.entity.Setmeal;
 import com.sky.mapper.SetmealMapper;
 import com.sky.service.SetmealService;
@@ -31,5 +32,16 @@ public class SetmealServiceImpl implements SetmealService {
     @Override
     public List<DishItemVO> getDishItemById(Long id) {
         return setmealMapper.getDishItemBySetmealId(id);
+    }
+
+    /**
+     * 新增套餐
+     * @param setmealDTO
+     */
+    @Override
+    public void save(SetmealDTO setmealDTO) {
+        Setmeal setmeal = new Setmeal();
+
+
     }
 }
